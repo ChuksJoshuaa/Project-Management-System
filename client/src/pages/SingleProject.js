@@ -1,6 +1,11 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
-import { Loader, ClientInfo } from "../components";
+import {
+  Loader,
+  ClientInfo,
+  DeleteProjectButton,
+  EditProjectForm,
+} from "../components";
 import { useQuery } from "@apollo/client";
 import { GET_PROJECT } from "../queries/projectQueries";
 
@@ -19,7 +24,7 @@ const SingleProject = () => {
       </p>
     );
   return (
-    <>
+    <div className="mb-2">
       {!loading && !error && (
         <div className="single-head card">
           <Link to="/" className="btn btn-light btn-sm d-inline ms-auto">
@@ -35,9 +40,13 @@ const SingleProject = () => {
           </h5>
 
           <ClientInfo client={data.project.clientId} />
+
+          <EditProjectForm project={data.project} />
+
+          <DeleteProjectButton projectId={data.project.id} />
         </div>
       )}
-    </>
+    </div>
   );
 };
 

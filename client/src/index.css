@@ -1,8 +1,13 @@
+html {
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   font-family: "Rajdhani", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 code {
@@ -47,6 +52,9 @@ code {
   margin-right: 5px;
 }
 
+.home {
+  height: 100vh;
+}
 .shadow {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
@@ -80,4 +88,31 @@ code {
 
 .lead {
   color: green;
+}
+
+.footer {
+  height: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.footer span {
+  color: #222;
+}
+
+.footer h5 {
+  color: #222;
+  margin: 0.1rem;
+  font-weight: 400;
+  text-transform: none;
+  line-height: 1.25;
+}
+
+@media (min-width: 776px) {
+  .footer {
+    flex-direction: row;
+  }
 }

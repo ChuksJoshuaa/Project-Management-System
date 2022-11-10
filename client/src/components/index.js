@@ -7,6 +7,9 @@ import AddProjectModal from "./AddProjectModal";
 import Projects from "./Projects";
 import ProjectCard from "./ProjectCard";
 import ClientInfo from "./ClientInfo";
+import DeleteProjectButton from "./DeleteProjectButton";
+import EditProjectForm from "./EditProjectForm";
+import Footer from "./Footer";
 
 export {
   Header,
@@ -18,4 +21,7 @@ export {
   ProjectCard,
   ClientInfo,
   AddProjectModal,
+  DeleteProjectButton,
+  Footer,
+  EditProjectForm,
 };
