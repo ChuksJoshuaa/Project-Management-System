@@ -9,7 +9,20 @@ const ClientRow = ({ client }) => {
     variables: { id: client.id },
 
     //It reloads the page delete client has been called and it gets the current users from the database
-    refetchQueries: [{ query: GET_CLIENTS }],
+    // refetchQueries: [{ query: GET_CLIENTS }],
+
+    //Or you can simply update the cache
+    update(cache, { data: { deleteClient } }) {
+      const { clients } = cache.readQuery({
+        query: GET_CLIENTS,
+      });
+      cache.writeQuery({
+        query: GET_CLIENTS,
+        data: {
+          clients: clients.filter((client) => client.id !== deleteClient.id),
+        },
+      });
+    },
   });
   return (
     <>
