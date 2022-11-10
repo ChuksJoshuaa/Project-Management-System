@@ -53,7 +53,8 @@ code {
 }
 
 .home {
-  height: 100vh;
+  height: 100%;
+  position: relative;
 }
 .shadow {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -114,5 +115,11 @@ code {
 @media (min-width: 776px) {
   .footer {
     flex-direction: row;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .hide-btn {
+    display: none;
   }
 }

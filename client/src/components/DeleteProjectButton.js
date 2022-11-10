@@ -17,7 +17,7 @@ const DeleteProjectButton = ({ projectId }) => {
       <div className="d-flex mt-5 ms-auto">
         <button className="btn btn-danger m-2" onClick={deleteProject}>
           <FaTrash className="icon" />
-          Delete Project
+          <span className="hide-btn">Delete Button</span>
         </button>
       </div>
     </>

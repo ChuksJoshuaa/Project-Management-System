@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { GET_PROJECT } from "../queries/projectQueries";
+import { UPDATE_PROJECT } from "../mutations/projectMutations";
 import { FaEdit } from "react-icons/fa";
 
 const EditProjectForm = ({ project }) => {
@@ -8,7 +9,20 @@ const EditProjectForm = ({ project }) => {
   const [description, setDescription] = useState(project.description);
   const [status, setStatus] = useState("");
 
-  const handleSubmit = () => {};
+  const [updateProject] = useMutation(UPDATE_PROJECT, {
+    variables: { id: project.id, name, description, status },
+    refetchQueries: [{ query: GET_PROJECT, variables: { id: project.id } }],
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (name === "" || description === "" || status === "") {
+      return alert("Please fill in all fields");
+    }
+
+    updateProject(name, description, status);
+  };
 
   return (
     <>
@@ -20,7 +34,7 @@ const EditProjectForm = ({ project }) => {
           data-bs-target="#updateProjectModal"
         >
           <FaEdit className="icon" />
-          Update Project
+          <span className="hide-btn">Update Project</span>
         </button>
       </div>
 
