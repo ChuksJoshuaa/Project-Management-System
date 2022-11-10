@@ -17,7 +17,11 @@ const EditProjectForm = ({ project }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (name === "" || description === "" || status === "") {
+    if (status === "") {
+      return alert("choose a new status");
+    }
+
+    if (name === "" || description === "") {
       return alert("Please fill in all fields");
     }
 
@@ -88,7 +92,7 @@ const EditProjectForm = ({ project }) => {
                     onChange={(e) => setStatus(e.target.value)}
                   >
                     {" "}
-                    <option>Choose a new status</option>
+                    <option value={""}>Choose a new status</option>
                     <option value="new">Not Started</option>
                     <option value="progress">In Progress</option>
                     <option value="completed">Completed</option>
