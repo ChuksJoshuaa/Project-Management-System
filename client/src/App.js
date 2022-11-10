@@ -1,7 +1,8 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
-import { Header, Clients, AddClientModal } from "./components";
-
+import { Header } from "./components";
+import { Home, SingleProject } from "./pages";
 //To eliminate this error -> Cache data may be lost when replacing the clients field of a Query object.
 const cache = new InMemoryCache({
   typePolicies: {
@@ -32,11 +33,15 @@ function App() {
   return (
     <>
       <ApolloProvider client={client}>
-        <Header />
-        <div className="container">
-          <AddClientModal />
-          <Clients />
-        </div>
+        <Router>
+          <Header />
+          <div className="container">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/projects/:id" element={<SingleProject />} />
+            </Routes>
+          </div>
+        </Router>
       </ApolloProvider>
     </>
   );
