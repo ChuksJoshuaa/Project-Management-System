@@ -8,7 +8,7 @@ import {
 
 const Home = () => {
   return (
-    <>
+    <div className="home">
       <div className="d-flex gap-3 mb-4">
         <AddClientModal />
         <AddProjectModal />
@@ -16,7 +16,7 @@ const Home = () => {
       <Projects />
       <hr />
       <Clients />
-    </>
+    </div>
   );
 };
 

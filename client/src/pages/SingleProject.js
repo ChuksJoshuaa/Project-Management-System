@@ -24,7 +24,7 @@ const SingleProject = () => {
       </p>
     );
   return (
-    <div className="mb-2">
+    <div className="mb-2 home">
       {!loading && !error && (
         <div className="single-head card">
           <Link to="/" className="btn btn-light btn-sm d-inline ms-auto">
@@ -41,9 +41,10 @@ const SingleProject = () => {
 
           <ClientInfo client={data.project.clientId} />
 
-          <EditProjectForm project={data.project} />
-
-          <DeleteProjectButton projectId={data.project.id} />
+          <div className="d-flex gap-3 mb-4">
+            <EditProjectForm project={data.project} />
+            <DeleteProjectButton projectId={data.project.id} />
+          </div>
         </div>
       )}
     </div>
