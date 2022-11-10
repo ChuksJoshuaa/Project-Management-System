@@ -1,11 +1,17 @@
 import React from "react";
-import { Clients, AddClientModal, Projects } from "../components";
+import {
+  Clients,
+  AddClientModal,
+  Projects,
+  AddProjectModal,
+} from "../components";
 
 const Home = () => {
   return (
     <>
       <div className="d-flex gap-3 mb-4">
         <AddClientModal />
+        <AddProjectModal />
       </div>
       <Projects />
       <hr />

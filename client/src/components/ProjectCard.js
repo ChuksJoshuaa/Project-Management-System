@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const ProjectCard = ({ project }) => {
   return (
-    <div className="col-md-6 shadow">
+    <div className="col-md-6">
       <div className="card mb-3">
-        <div className="card-body">
+        <div className="card-body shadow">
           <div className="d-flex justify-content-between align-items center">
             <h5 className="card-title"> {project.name}</h5>
 
@@ -14,7 +14,8 @@ const ProjectCard = ({ project }) => {
             </Link>
           </div>
           <p className="small">
-            Status: <strong>{project.status}</strong>
+            Status:{" "}
+            <strong className="project-status lead">{project.status}</strong>
           </p>
         </div>
       </div>

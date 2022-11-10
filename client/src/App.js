@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 import { Header } from "./components";
-import { Home, SingleProject } from "./pages";
+import { Home, SingleProject, NotFound } from "./pages";
 //To eliminate this error -> Cache data may be lost when replacing the clients field of a Query object.
 const cache = new InMemoryCache({
   typePolicies: {
@@ -36,9 +36,14 @@ function App() {
         <Router>
           <Header />
           <div className="container">
+            <link
+              href="https://fonts.googleapis.com/css2?family=Amiri:ital@1&family=Lobster+Two&family=Cormorant+Garamond:wght@300&family=Racing+Sans+One&family=Rajdhani:wght@500&family=Roboto+Mono:wght@100&display=swap"
+              rel="stylesheet"
+            ></link>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/projects/:id" element={<SingleProject />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </div>
         </Router>

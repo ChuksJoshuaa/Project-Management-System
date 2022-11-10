@@ -8,7 +8,9 @@ const Header = () => {
         <a className="navbar-brand" href="/">
           <div className="d-flex">
             <img src={logo} alt="logo" className="mr-2" />
-            <div>Project Management System</div>
+            <h1 className="title font-weight-bold">
+              Project Management System
+            </h1>
           </div>
         </a>
       </div>

@@ -10,15 +10,15 @@ const Clients = () => {
   if (error) return <p>Something went wrong</p>;
 
   return (
-    <div>
+    <div className="table-responsive">
       {!loading && !error && (
-        <table className="table table-hover mt-3">
+        <table className="table table-hover mt-3 ">
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Phone</th>
-              <th></th>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Phone</th>
+              <th scope="col"></th>
             </tr>
           </thead>
           <tbody>

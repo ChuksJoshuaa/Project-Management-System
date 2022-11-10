@@ -26,7 +26,7 @@ const ClientRow = ({ client }) => {
   });
   return (
     <>
-      <tr className="mb-2">
+      <tr className="mb-2" scope="row">
         <td>{client.name}</td>
         <td>{client.email}</td>
         <td>{client.phone}</td>
