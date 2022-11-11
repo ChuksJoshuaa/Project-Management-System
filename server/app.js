@@ -16,6 +16,12 @@ connectDB();
 const app = express();
 app.use(cors());
 
+app.get("/", (req, res) => {
+  res.send(
+    '<h1>Project Management System Api working perfectly</h1><a href="/graphql">Click here</a>'
+  );
+});
+
 app.use(
   "/graphql",
   graphqlHTTP({
