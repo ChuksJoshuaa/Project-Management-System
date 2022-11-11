@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 import { Header, Footer } from "./components";
 import { Home, SingleProject, NotFound } from "./pages";
+
 //To eliminate this error -> Cache data may be lost when replacing the clients field of a Query object.
 const cache = new InMemoryCache({
   typePolicies: {
@@ -25,7 +26,7 @@ const cache = new InMemoryCache({
 });
 
 const client = new ApolloClient({
-  uri: "http://localhost:5000/graphql",
+  uri: "https://system-mgmt.vercel.app/graphql",
   cache,
 });
 
