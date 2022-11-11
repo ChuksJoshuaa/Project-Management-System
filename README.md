@@ -1,4 +1,4 @@
-# Graphql Project Management System
+# GraphQL Project Management System
 
 ## GraphQL Queries & Mutations
 
