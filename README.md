@@ -77,7 +77,7 @@ mutation {
 ```
 
   mutation {
-    addProject(name: "Best Footballer", description: "Messi is the most complete player in the world and he has achieved a lot of individual awards", status: progress, clientId: "636b67c1551f6c310008f0cb"){
+    addProject(name: "Best Footballer", description: "Messi is the most complete player in the world and he has achieved a lot of individual awards;", status: progress, clientId: "636b67c1551f6c310008f0cb"){
       id
       name
       status
