@@ -34,6 +34,8 @@
 }
 ```
 
+.
+
 ### Get a single project name, description along with the client name and email
 
 ```
